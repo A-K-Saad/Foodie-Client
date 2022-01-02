@@ -1,10 +1,14 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import NotFound from "./components/NotFound/NotFound";
 import AuthProvider from "./Contexts/AuthProvider";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+import "./App.css";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
 const App = () => {
   const FullContainer = ({ children }) => {
     return (
@@ -34,6 +38,19 @@ const App = () => {
               <Route exact path="/signup">
                 <FullContainer>
                   <Signup></Signup>
+                </FullContainer>
+              </Route>
+              <Route exact path="/products/:productId">
+                <FullContainer>
+                  <ProductDetails></ProductDetails>
+                </FullContainer>
+              </Route>
+              <Route path="/dashboard">
+                <Dashboard></Dashboard>
+              </Route>
+              <Route path="*">
+                <FullContainer>
+                  <NotFound></NotFound>
                 </FullContainer>
               </Route>
             </Switch>

@@ -19,15 +19,15 @@ const Navbar = () => {
             <div className="px-2 md:px-5 xl:px-12 py-1 flex w-full items-center justify-between">
               <NavLink onMouseUp={(e) => ripple.create(e, "light")} to="/">
                 <img
-                  src="https://www.slazzer.com/downloads/040c2a70-6b97-11ec-967f-0200a434d802/520-5200111_foodie-logo-hd-png-download_prev_ui.png"
-                  alt="Drone Stars"
+                  src="https://i.ibb.co/CtM2sZx/foodie.png"
+                  alt="Foodie"
                   className="w-24"
                 />
               </NavLink>
               <div
                 className={`${
                   isMenuOpen
-                    ? "absolute md:relative top-20 md:top-0 w-full md:w-auto left-0 bg-white py-4 md:py-0 z-50 -mt-0.5 shadow-inner md:shadow-none border-b md:border-none"
+                    ? "absolute md:relative top-20 md:top-0 w-full md:w-auto left-0 bg-white py-4 md:py-0 z-50 -mt-2 shadow-inner md:shadow-none border-b md:border-none"
                     : "hidden md:flex items-center justify-between"
                 }`}
               >

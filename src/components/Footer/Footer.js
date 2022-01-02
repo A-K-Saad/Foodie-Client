@@ -16,7 +16,7 @@ const Footer = () => {
             >
               <div className="flex items-center justify-center w-28 h-12 rounded-full">
                 <img
-                  src="https://www.slazzer.com/downloads/040c2a70-6b97-11ec-967f-0200a434d802/520-5200111_foodie-logo-hd-png-download_prev_ui.png"
+                  src="https://i.ibb.co/CtM2sZx/foodie.png"
                   alt="Drone_Img"
                 />
               </div>

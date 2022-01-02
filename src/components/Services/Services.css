@@ -1,0 +1,23 @@
+.counter {
+  position: relative;
+}
+.counter:after,
+.counter:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: #d72323;
+  border-style: solid;
+}
+.counter::before {
+  left: -6px;
+  top: -6px;
+  border-width: 2px 0px 0px 2px;
+}
+
+.counter::after {
+  right: -6px;
+  bottom: -6px;
+  border-width: 0px 2px 2px 0px;
+}
