@@ -17,11 +17,13 @@ const Banner = () => {
                 <div class="absolute inset-0 bg-gradient-to-t from-green-900"></div>
               </div>
               <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                <h1 class="text-center text-4xl font-bold tracking-tight sm:text-6xl lg:text-6xl">
+                <h1 class="text-center text-5xl font-light tracking-tight sm:text-6xl lg:text-6xl">
                   <span class="block text-white">
                     Serving fresh ingredients
                   </span>
-                  <span class="block text-green-200">you way everyday!</span>
+                  <span class="block text-4xl lg:text-5xl mt-4 font-light text-green-200">
+                    you way everyday!
+                  </span>
                 </h1>
               </div>
             </div>
@@ -32,8 +34,8 @@ const Banner = () => {
         <div class="md:-mt-24 -mt-28">
           <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-5xl mx-auto px-2 lg:px-6">
-              <dl class="rounded-2xl bg-white shadow-lg divide-y md:divide-y-0 md:divide-x divide-x divide-gray-100 grid grid-cols-2 md:grid-cols-4">
-                <div class="flex flex-col  p-6 text-center">
+              <dl class="rounded-2xl overflow-hidden bg-white shadow-lg divide-y md:divide-y-0 md:divide-x divide-x divide-gray-100 grid grid-cols-2 md:grid-cols-4">
+                <div class="flex flex-col p-6 text-center">
                   <dt class="order-2 mt-2 text-xl leading-6 font-bold text-gray-700">
                     Vegitables
                   </dt>
