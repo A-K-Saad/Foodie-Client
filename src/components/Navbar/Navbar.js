@@ -46,6 +46,13 @@ const Navbar = () => {
                   >
                     Products
                   </NavLink>
+                  <NavLink
+                    onMouseUp={(e) => ripple.create(e, "light")}
+                    to="/checkout"
+                    className="px-4 py-1 md:py-3"
+                  >
+                    Checkout
+                  </NavLink>
                   {user?.email && (
                     <NavLink
                       onMouseUp={(e) => ripple.create(e, "light")}

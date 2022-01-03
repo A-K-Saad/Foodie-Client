@@ -8,13 +8,18 @@ const ProductDetails = ({ setCartUpdate }) => {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(product?.price * quantity);
+  const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
   const { fireToast } = Alert();
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(`https://glacial-bastion-21555.herokuapp.com/products/${productId}`)
       .then((res) => res.json())
-      .then((data) => setProduct(data));
+      .then((data) => {
+        setIsLoading(false);
+        setProduct(data);
+      });
   }, [productId]);
 
   useEffect(() => {
@@ -32,13 +37,14 @@ const ProductDetails = ({ setCartUpdate }) => {
           email: user?.email,
           productId: productId,
           quantity: quantity,
-          price: price.toFixed(2),
+          price: parseFloat(parseFloat(price).toFixed(2)),
         }),
       })
         .then((res) => res.json())
         .then(() => {
           setQuantity(1);
           setPrice(product.price);
+          setCartUpdate(Math.random() * 2788);
           fireToast("success", "Added To Cart!");
         })
         .catch(() => fireToast("error", "Something Went Wrong!"));
@@ -50,7 +56,7 @@ const ProductDetails = ({ setCartUpdate }) => {
       cart.push({
         productId: productId,
         quantity: quantity,
-        price: price.toFixed(2),
+        price: parseFloat(parseFloat(price).toFixed(2)),
       });
       localStorage.setItem("cart", JSON.stringify(cart));
       setQuantity(1);
@@ -59,6 +65,17 @@ const ProductDetails = ({ setCartUpdate }) => {
       fireToast("success", "Added To Cart!");
     }
   };
+  if (isLoading) {
+    return (
+      <div className="flex justify-center align-center">
+        <img
+          src="https://i.ibb.co/QjZhgZc/load.gif"
+          alt="Loading"
+          className="w-24"
+        />
+      </div>
+    );
+  }
 
   return (
     <section className="text-gray-600 overflow-hidden">
@@ -112,7 +129,7 @@ const ProductDetails = ({ setCartUpdate }) => {
             </div>
             <div className="flex gap-4 items-center">
               <span className="font-medium text-2xl text-gray-900">
-                ${price ? price.toFixed(2) : product.price}
+                ${price ? parseFloat(price).toFixed(2) : product.price}
               </span>
               <button
                 className="ml-auto text-white bg-indigo-400 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-500 rounded"

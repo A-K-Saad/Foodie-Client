@@ -3,7 +3,7 @@ import React from "react";
 const Banner = () => {
   return (
     <>
-      <section className="min-h-screen bg-white">
+      <section className="min-h-screen bg-white z-10">
         <div>
           {/* <!-- banner --> */}
           <div className="relative">

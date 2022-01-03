@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Ripple from "material-ripple-effects";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -10,7 +9,6 @@ SwiperCore.use([Pagination, Autoplay]);
 const ProductCarousel = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const ripple = new Ripple();
 
   useEffect(() => {
     setIsLoading(true);
@@ -21,6 +19,7 @@ const ProductCarousel = () => {
         setIsLoading(false);
       });
   }, []);
+
   if (isLoading) {
     return (
       <div className="flex justify-center align-center">
@@ -71,24 +70,19 @@ const ProductCarousel = () => {
                   key={product._id}
                   className="flex-col rounded-lg bg-white text-center"
                 >
-                  <div className="w-full h-60 overflow-hidden p-2">
-                    <img
-                      src={product.photo}
-                      alt="Drone"
-                      className="rounded-t-lg m-auto max-w-full h-full"
-                    />
-                  </div>
-                  <div className="pb-8 px-2">
-                    <h1 className="text-xl">{product.name}</h1>
-                    <h1 className="text-blue-400 pb-3">${product.price}</h1>
-                    <NavLink
-                      to={`/products/${product._id}`}
-                      className="py-2 px-5 bg-indigo-400 rounded text-base text-white hover:bg-indigo-500 rounded-full"
-                      onMouseUp={(e) => ripple.create(e, "light")}
-                    >
-                      View Details
-                    </NavLink>
-                  </div>
+                  <NavLink to={`/products/${product._id}`}>
+                    <div className="w-full h-60 overflow-hidden p-2">
+                      <img
+                        src={product.photo}
+                        alt="Drone"
+                        className="rounded-t-lg m-auto max-w-full h-full"
+                      />
+                    </div>
+                    <div className="pb-8 px-2">
+                      <h1 className="text-xl">{product.name}</h1>
+                      <h1 className="text-blue-400 pb-3">${product.price}</h1>
+                    </div>
+                  </NavLink>
                 </SwiperSlide>
               );
             })}

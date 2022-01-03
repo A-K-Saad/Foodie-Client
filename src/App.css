@@ -1,6 +1,9 @@
 * {
   -webkit-tap-highlight-color: transparent;
 }
+.z-60 {
+  z-index: 60;
+}
 .underline {
   width: 6rem;
   height: 7px;
@@ -58,6 +61,18 @@
 } */
 .message-clip {
   clip-path: polygon(25% 0%, 100% 0, 100% 100%, 25% 100%, 0% 50%);
+}
+.noscrollbar::-webkit-scrollbar {
+  width: 5px;
+  background: #ffffff;
+}
+.noscrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.noscrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 @media only screen and (max-width: 688px) {
   .message-clip {
