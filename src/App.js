@@ -9,6 +9,8 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import "./App.css";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import CartButton from "./components/CartButton/CartButton";
+import { useState } from "react";
 const App = () => {
   const FullContainer = ({ children }) => {
     return (
@@ -19,11 +21,13 @@ const App = () => {
       </>
     );
   };
+  const [cartUpdate, setCartUpdate] = useState("");
   return (
     <>
       <div className="min-h-screen flex flex-col justify-between">
         <AuthProvider>
           <BrowserRouter>
+            <CartButton cartUpdate={cartUpdate}></CartButton>
             <Switch>
               <Route exact path="/">
                 <FullContainer>
@@ -42,7 +46,9 @@ const App = () => {
               </Route>
               <Route exact path="/products/:productId">
                 <FullContainer>
-                  <ProductDetails></ProductDetails>
+                  <ProductDetails
+                    setCartUpdate={setCartUpdate}
+                  ></ProductDetails>
                 </FullContainer>
               </Route>
               <Route path="/dashboard">
