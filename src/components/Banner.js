@@ -22,7 +22,7 @@ const Banner = () => {
                     Serving fresh ingredients
                   </span>
                   <span class="block text-4xl lg:text-5xl mt-4 font-light text-green-200">
-                    you way everyday!
+                    your way everyday!
                   </span>
                 </h1>
               </div>
