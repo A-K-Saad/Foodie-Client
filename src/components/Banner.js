@@ -17,11 +17,11 @@ const Banner = () => {
                 <div class="absolute inset-0 bg-gradient-to-t from-green-900"></div>
               </div>
               <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                <h1 class="text-center text-5xl font-light tracking-tight sm:text-6xl lg:text-6xl">
+                <h1 class="text-center text-5xl font-bold tracking-tight lg:text-7xl">
                   <span class="block text-white">
-                    Serving fresh ingredients
+                    Serving Fresh Ingredients
                   </span>
-                  <span class="block text-4xl lg:text-5xl mt-4 font-light text-green-200">
+                  <span class="block text-4xl lg:text-5xl mt-4 font-light text-green-100">
                     your way everyday!
                   </span>
                 </h1>
