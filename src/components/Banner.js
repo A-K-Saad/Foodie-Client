@@ -105,28 +105,3 @@ const Banner = () => {
 };
 
 export default Banner;
-{
-  /* <section class="bg-red-200 text-green-900 relative">
-
-      <div
-        class="min-h-screen hero-image bg-right-bottom bg-cover flex"
-        style={{
-          'background-image':
-            'url(https://www.supermarketnews.com/sites/supermarketnews.com/files/styles/article_featured_retina/public/Featured%20Image%201500X800_0.png?itok=ItTtKQil)',
-        }}
-      >
-        <div class="relative container mx-auto p-4 flex items-end z-10">
-          <div>
-            <div class="float-left py-4 px-5 my-5">
-              <div class="heading mb-3 text-3xl font-bold  md:text-4xl">
-                Affordable year-round care!
-              </div>
-              <div class="text leading-normal hidden sm:block">
-                Helping Women Meet All of their Health Care Needs
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> */
-}
