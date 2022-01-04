@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Alert from "../../hooks/Alert";
 import useAuth from "../../hooks/useAuth";
 
@@ -11,6 +11,7 @@ const ProductDetails = ({ setCartUpdate }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
   const { fireToast } = Alert();
+  const history = useHistory();
 
   useEffect(() => {
     fetch(`https://glacial-bastion-21555.herokuapp.com/products/${productId}`)
@@ -91,6 +92,12 @@ const ProductDetails = ({ setCartUpdate }) => {
             />
           </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col justify-center">
+            <h1
+              className="mb-2 cursor-pointer"
+              onClick={() => history.goBack() || history.push("/")}
+            >
+              <i className="fas fa-arrow-left mr-2"></i> Back
+            </h1>
             <h1 className="text-gray-900 mb-8 text-3xl title-font font-medium">
               {product.name}
             </h1>

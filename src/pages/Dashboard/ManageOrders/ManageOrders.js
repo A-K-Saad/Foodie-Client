@@ -42,7 +42,7 @@ const ManageOrders = () => {
     //   <div className="md:p-9">
     //     <div className="flex items-center justify-center h-full w-full">
     <div className="w-full m-auto p-1 md:p-8">
-      <div className="table rounded-lg w-full shadow-md">
+      <div className="table rounded-lg w-full shadow-md  bg-white">
         <div className="grid grid-cols-4 py-4">
           <div className="text-left md:pl-6">Recipient</div>
           <div className="text-center">Price</div>

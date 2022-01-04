@@ -86,7 +86,7 @@ const ManageProducts = () => {
                         <img
                           src={product.photo}
                           alt={product.name}
-                          className="w-auto h-auto"
+                          className="h-full"
                         />
                       </NavLink>
                     </div>

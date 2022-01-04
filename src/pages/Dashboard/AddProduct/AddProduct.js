@@ -6,6 +6,7 @@ import UploadImage from "../../../hooks/UploadImage";
 const AddProduct = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
+  const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [photo, setPhoto] = useState("");
 
@@ -25,6 +26,7 @@ const AddProduct = () => {
       body: JSON.stringify({
         name: name,
         price: parseFloat(price),
+        category: category,
         description: description,
         photo: photo,
       }),
@@ -68,6 +70,24 @@ const AddProduct = () => {
             setPrice(e.target.value);
           }}
         />
+        <label className="block text-sm font-bold mb-2 mt-4" htmlFor="category">
+          Category:
+        </label>
+        <select
+          class="form-select shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="category"
+          defaultValue="Select The Product Category"
+          required
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option disabled defaultValue>
+            Select The Product Category
+          </option>
+          <option value="Fruits">Fruits</option>
+          <option value="Vegetables">Vegetables</option>
+          <option value="Delicatessens">Delicatessens</option>
+          <option value="Beverage">Beverage</option>
+        </select>
         <label
           className="block text-sm font-bold mb-2 mt-4"
           htmlFor="description"
@@ -92,7 +112,7 @@ const AddProduct = () => {
             id="photo"
             onMouseUp={(e) => ripple.create(e, "light")}
             type="file"
-            className="custom-file-input"
+            className="custom-file-input cursor-pointer"
             onChange={(e) => {
               uploadImage(e.target.files[0], setPhoto);
               e.target.click();

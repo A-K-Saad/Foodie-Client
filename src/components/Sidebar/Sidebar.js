@@ -13,7 +13,7 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
       {/* Sidebar starts */}
       {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
       <div
-        className={`md:w-1/5 relative z-40 bg-white shadow md:h-full flex-col justify-between md:flex min-h-screen ${
+        className={`md:w-1/5 absolute md:relative z-40 bg-white shadow md:h-full flex-col justify-between md:flex min-h-screen ${
           isMenuOpen ? "flex w-auto" : "hidden"
         }`}
       >
@@ -28,11 +28,11 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
               <img
                 src="https://i.ibb.co/CtM2sZx/foodie.png"
                 alt="Foodie"
-                className="w-18 md:w-28"
+                className="w-20 md:w-28"
               />
             </NavLink>
             <button
-              className="block md:hidden mr-3"
+              className="inline-block md:hidden mr-3"
               onClick={() => setIsMenuOpen(false)}
             >
               <i className="fas fa-times text-2xl text-gray-600"></i>
