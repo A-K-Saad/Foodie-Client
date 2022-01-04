@@ -15,7 +15,9 @@ const ProductReviews = ({ productId }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://glacial-bastion-21555.herokuapp.com/ratings/${productId}`)
+    fetch(
+      `https://glacial-bastion-21555.herokuapp.com/ratings/${productId}?currentPage=1&limit=4`
+    )
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
