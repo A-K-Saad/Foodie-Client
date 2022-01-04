@@ -24,9 +24,9 @@ const CartCanvas = ({ cartUpdate }) => {
 
   return (
     <>
-      <div className="fixed top-0 right-0 bottom-0 m-auto flex items-center z-50">
+      <div className="fixed top-0 right-0 bottom-0 m-auto flex items-center z-60 pointer-events-none">
         <div
-          className="bg-white shadow rounded-l-md p-5 text-center cursor-pointer"
+          className="bg-white shadow rounded-l-md p-5 text-center cursor-pointer pointer-events-auto"
           onClick={() => setIsCartOpen(true)}
         >
           <i className="fas fa-shopping-basket text-2xl text-gray-800"></i>
