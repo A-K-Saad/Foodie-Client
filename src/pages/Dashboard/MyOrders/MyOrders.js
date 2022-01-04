@@ -9,7 +9,6 @@ const MyOrders = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     fetch(
       `https://glacial-bastion-21555.herokuapp.com/my-orders/${user?.email}`
     )
@@ -44,11 +43,11 @@ const MyOrders = () => {
 
   return (
     <>
-      <div className="w-full m-auto">
+      <div className="w-full m-auto md:px-8">
         <div className="table rounded-lg w-full shadow-md">
           <div className="grid grid-cols-4 py-4">
             <div className="text-left md:pl-6">Recipient</div>
-            <div className="text-center">Product</div>
+            <div className="text-center">Price</div>
             <div className="text-center">Status</div>
             <div className="text-right md:pr-6">Action</div>
           </div>

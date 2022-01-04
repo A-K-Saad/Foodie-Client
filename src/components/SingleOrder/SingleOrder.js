@@ -79,10 +79,8 @@ const SingleOrder = ({
             onMouseUp={(e) => ripple.create(e, "light")}
             to={`/purchase/${order.productId}`}
             className="text-indigo-600"
-          >
-            #{order.productId}
-          </NavLink>
-          Price: ${order.price}
+          ></NavLink>
+          ${order.price}
         </div>
         <div className="text-center flex items-center justify-center">
           <span

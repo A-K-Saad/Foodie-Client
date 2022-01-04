@@ -13,7 +13,6 @@ const ProductDetails = ({ setCartUpdate }) => {
   const { fireToast } = Alert();
 
   useEffect(() => {
-    setIsLoading(true);
     fetch(`https://glacial-bastion-21555.herokuapp.com/products/${productId}`)
       .then((res) => res.json())
       .then((data) => {
@@ -23,7 +22,7 @@ const ProductDetails = ({ setCartUpdate }) => {
   }, [productId]);
 
   useEffect(() => {
-    setPrice(product.price * parseInt(quantity));
+    setPrice(parseFloat(product.price) * parseInt(quantity));
   }, [quantity, product.price]);
 
   const handleAddToCart = () => {

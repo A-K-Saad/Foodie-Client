@@ -45,7 +45,7 @@ const ManageOrders = () => {
       <div className="table rounded-lg w-full shadow-md">
         <div className="grid grid-cols-4 py-4">
           <div className="text-left md:pl-6">Recipient</div>
-          <div className="text-center">Product</div>
+          <div className="text-center">Price</div>
           <div className="text-center">Status</div>
           <div className="text-right md:pr-6">Action</div>
         </div>

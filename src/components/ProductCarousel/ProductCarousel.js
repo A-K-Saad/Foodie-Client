@@ -74,7 +74,7 @@ const ProductCarousel = () => {
                     <div className="w-full h-60 overflow-hidden p-2">
                       <img
                         src={product.photo}
-                        alt="Drone"
+                        alt="Product"
                         className="rounded-t-lg m-auto max-w-full h-full"
                       />
                     </div>

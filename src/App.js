@@ -12,23 +12,24 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import CartCanvas from "./components/CartCanvas/CartCanvas";
 import { useState } from "react";
 import Checkout from "./pages/Checkout/Checkout";
+import Products from "./pages/Products/Products";
 const App = () => {
   const FullContainer = ({ children }) => {
     return (
       <>
         <Navbar></Navbar>
+        <CartCanvas cartUpdate={cartUpdate}></CartCanvas>
         {children}
         <Footer></Footer>
       </>
     );
   };
-  const [cartUpdate, setCartUpdate] = useState("");
+  const [cartUpdate, setCartUpdate] = useState(0);
   return (
     <>
       <div className="min-h-screen flex flex-col justify-between">
         <AuthProvider>
           <BrowserRouter>
-            <CartCanvas cartUpdate={cartUpdate}></CartCanvas>
             <Switch>
               <Route exact path="/">
                 <FullContainer>
@@ -45,6 +46,11 @@ const App = () => {
                   <Signup></Signup>
                 </FullContainer>
               </Route>
+              <Route exact path="/products">
+                <FullContainer>
+                  <Products></Products>
+                </FullContainer>
+              </Route>
               <Route exact path="/products/:productId">
                 <FullContainer>
                   <ProductDetails
@@ -53,9 +59,9 @@ const App = () => {
                 </FullContainer>
               </Route>
               <Route exact path="/checkout">
-                <FullContainer>
-                  <Checkout></Checkout>
-                </FullContainer>
+                <Navbar></Navbar>
+                <Checkout cartUpdate={cartUpdate}></Checkout>
+                <Footer></Footer>
               </Route>
               <Route path="/dashboard">
                 <Dashboard></Dashboard>

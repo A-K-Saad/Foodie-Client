@@ -24,7 +24,7 @@ const AddProduct = () => {
       },
       body: JSON.stringify({
         name: name,
-        price: price,
+        price: parseFloat(price),
         description: description,
         photo: photo,
       }),
