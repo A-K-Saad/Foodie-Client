@@ -13,6 +13,7 @@ import CartCanvas from "./components/CartCanvas/CartCanvas";
 import { useState } from "react";
 import Checkout from "./pages/Checkout/Checkout";
 import Products from "./pages/Products/Products";
+import Reviews from "./pages/Reviews/Reviews";
 const App = () => {
   const FullContainer = ({ children }) => {
     return (
@@ -56,6 +57,11 @@ const App = () => {
                   <ProductDetails
                     setCartUpdate={setCartUpdate}
                   ></ProductDetails>
+                </FullContainer>
+              </Route>
+              <Route exact path="/reviews">
+                <FullContainer>
+                  <Reviews></Reviews>
                 </FullContainer>
               </Route>
               <Route exact path="/checkout">
