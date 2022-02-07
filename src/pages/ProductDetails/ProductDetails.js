@@ -160,9 +160,11 @@ const ProductDetails = ({ setCartUpdate }) => {
         </div>
       </section>
       <div className="text-center">
-        <div className="bg-white">
-          <ProductReviews productId={productId}></ProductReviews>
-        </div>
+        {user?.email && (
+          <div className="bg-white px-8 md:px-32">
+            <ProductReviews productId={productId}></ProductReviews>
+          </div>
+        )}
         {sameProducts && (
           <ProductCarousel
             products={sameProducts}

@@ -139,8 +139,8 @@ const SingleOrder = ({
                 <i className="fas fa-map-marker-alt mr-2"></i>
                 {order.address}
               </span>
-              <span>
-                <i className="fas fa-phone-alt"></i>
+              <span className="text-gray-500">
+                <i className="fas fa-phone-alt mr-2"></i>
                 {order.phone}
               </span>
             </>

@@ -65,7 +65,7 @@ const Navbar = () => {
                   <NavLink
                     onMouseUp={(e) => ripple.create(e, "light")}
                     to="/reviews"
-                    className="px-4 py-1 md:py-3"
+                    className="px-4 py-1 md:py-3 md:hidden lg:inline-block"
                   >
                     Reviews
                   </NavLink>

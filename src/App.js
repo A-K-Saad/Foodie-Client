@@ -14,6 +14,7 @@ import { useState } from "react";
 import Checkout from "./pages/Checkout/Checkout";
 import Products from "./pages/Products/Products";
 import Reviews from "./pages/Reviews/Reviews";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 const App = () => {
   const FullContainer = ({ children }) => {
     return (
@@ -64,11 +65,11 @@ const App = () => {
                   <Reviews></Reviews>
                 </FullContainer>
               </Route>
-              <Route exact path="/checkout">
+              <PrivateRoute exact path="/checkout">
                 <Navbar></Navbar>
                 <Checkout cartUpdate={cartUpdate}></Checkout>
                 <Footer></Footer>
-              </Route>
+              </PrivateRoute>
               <Route path="/dashboard">
                 <Dashboard></Dashboard>
               </Route>
